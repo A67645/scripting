@@ -1,0 +1,47 @@
+Python Quick Reference:
+
+int -> operações: * + / - % //;
+    -> divmod(m,n): (quociente, resto);
+
+String -> Operações: "string" + " 1" >>> "string 1"; 
+                     "string"*2 >>> "stringstring";
+                     ("#"*2+"\n")*2 >> "##\n##\n";
+       -> print("string"): imprime string formatada;
+       -> 'string' ou "string": string monolinha, expandem caracteres como \n...;
+       -> """string....string""": strings multilinha;
+       -> r'string': strings em raw mode;
+       -> f'string {expr} string {exp}': faz o eval das expressões, exemplo: f'{n} plus {m} equals {n+m} -> '5 plus 10 equals 15';
+       -> \x[][]: permite escrever caracteres em exadecimal;
+       -> \u[][][][]: permite escrever caracteres em unicode;
+       -> s.capitalize(): coloca a primeira letra em maiuscula;
+       -> s.upper(): coloca todas as letras em maiusculo;
+       -> s.lower(): coloca todas as letras em minusculo;
+       -> s.title(): coloca as primeiras letras de cada palavra em maiusculo;
+       -> s.split(args), s.replace(args), s.join(args), s.find(args)...;
+       -> funções sobre strings podem ser usadas em modo funcional como str.find(s,"000\n0") ou como objectos como s.find("000\n0");
+
+None -> atributo booleano que representa indefinido;
+
+booleanos -> False, True, None;
+
+identação -> no python a separação entre blocos é feita com recurso a identação com tab ou espaços (exclusivos);
+condicionais ->  if(cond):
+                     bloco
+                 elif(cond):
+                     bloco
+                 else:
+                     bloco
+             -> a = x if c else y
+
+ciclos -> for a in lista:
+              bloco
+          else -> (quando o ciclo nunca é precorrido)
+              bloco
+
+funcoes -> def f(arg, arg):
+               bloco
+               return exp
+
+funcoes anonimas -> lambda x,y: exp
+
+                  

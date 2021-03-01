@@ -1,0 +1,28 @@
+#!usr/bin/python3
+
+from jjcli import *
+
+c = clfilter(opt = "a")
+ocr = {}
+for par in c.paragraph():
+    for w in findall(r"\w+", par):
+        ocr[w] = 1 if w not in ocr else ocr[w] + 1
+
+def dict_pp_word(d):
+    for k,v in sorted(d.items(), key = lambda x: x[0]):
+        print(f"{k}: {v}")
+
+def dict_pp_num(d):
+    for k,v in sorted(d.items(), key = lambda x: x[1]):
+        print(f"{k}: {v}")
+
+if("-a" in c.opt):
+    dict_pp_word(ocr)
+else:
+    dict_pp_num(ocr)
+
+# linha de comandos
+# python3 wordcount.py
+# python3 wordcount.py file1.txt file2.txt
+# chmod 755 wordcount.py
+# cp wordcount.py /usr/bin/wordcount

@@ -1,0 +1,24 @@
+# instalar sudo pip install jjcli
+# o script seguinte conta as linhas do stdin ou de ficheiros passados por argumento ao invocar o python3
+
+#!usr/bin/python3
+
+from jjcli import *
+
+c=clfilter()
+i = w = j = r = 0
+for line in c.input():
+    j += len(line) + 1
+    i += 1
+    w += len(line.split())
+
+for par in c.paragraph():
+    r += 1
+
+print(i,w,j,r)
+
+# linha de comandos
+# python3 wordcount.py
+# python3 wordcount.py file.txt
+# chmod 755 wordcount.py
+# cp wordcount.py /usr/bin/wordcount
